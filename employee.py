@@ -1,5 +1,5 @@
-"""Employee pay calculator."""
-"""ENTER YOUR SOLUTION HERE!"""
+'Employee pay calculator.'
+'ENTER YOUR SOLUTION HERE!'
 
 class Employee:
     def __init__(self, name, contract_type='salary', salary=0, hourly_wage=0, hours_worked=0, bonus=0, contracts_landed=0, commission_per_contract=0):
@@ -30,24 +30,24 @@ class Employee:
         
 
     def __str__(self):
-        pay_description = f"{self.name} works on "
+        pay_description = f'{self.name} works on '
 
         if self.contract_type == 'salary':
-            pay_description += f"a monthly salary of {self.salary}."
+            pay_description += f'a monthly salary of {self.salary}.'
         elif self.contract_type == 'hourly':
-            pay_description += f"a contract of {self.hours_worked} hours at {self.hourly_wage}/hour."
+            pay_description += f'a contract of {self.hours_worked} hours at {self.hourly_wage}/hour.'
         else:
-            pay_description += "an unknown contract type."
+            pay_description += 'an unknown contract type.'
 
         total_pay = self.get_pay()
 
         if self.bonus:
-            pay_description += f" and receives a bonus commission of {self.bonus}."
+            pay_description += f' and receives a bonus commission of {self.bonus}.'
 
         if self.contracts_landed and self.commission_per_contract:
-            pay_description += f" and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract."
+            pay_description += f' and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract.'
 
-        pay_description += f" Their total pay is {total_pay}."
+        pay_description += f' Their total pay is {total_pay}.'
 
         return pay_description
 

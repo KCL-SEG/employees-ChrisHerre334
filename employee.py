@@ -41,11 +41,10 @@ class Employee:
 
         total_pay = self.get_pay()
 
-        if self.bonus:
-            pay_description += f' and receives a bonus commission of {self.bonus}.'
-
         if self.contracts_landed and self.commission_per_contract:
             pay_description += f' and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract.'
+        elif self.bonus:
+            pay_description += f' and receives a bonus commission of {self.bonus}.'
 
         pay_description += f' Their total pay is {total_pay}.'
 

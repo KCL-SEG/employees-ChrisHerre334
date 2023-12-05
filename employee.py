@@ -62,10 +62,10 @@ charlie = Employee('Charlie', 'hourly', hourly_wage=25, hours_worked=100)
 renee = Employee('Renee', 'salary', salary=3000, contracts_landed=4, commission_per_contract=200)
 
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan', 'houry', hourly_wage=25, hours_worked=150, contracts_landed=3, commission_per_contract=220)
+jan = Employee('Jan', 'hourly', hourly_wage=25, hours_worked=150, contracts_landed=3, commission_per_contract=220)
 
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', 'salary', salary=200, bonus=1500)
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
-ariel = Employee('Ariel', 'houry', hourly_wage=30, hours_worked=120, bonus=600)
+ariel = Employee('Ariel', 'hourly', hourly_wage=30, hours_worked=120, bonus=600)

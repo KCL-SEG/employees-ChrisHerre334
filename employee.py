@@ -13,12 +13,21 @@ class Employee:
         self.commission_per_contract = commission_per_contract
 
     def get_pay(self):
+        total_pay = 0
+
         if self.contract_type == 'salary':
-            return self.salary
+            total_pay = self.salary
         elif self.contract_type == 'hourly':
-            return self.hourly_wage * self.hours_worked
-        else:
-            return 0
+            total_pay = self.hourly_wage * self.hours_worked
+        
+        if self.bonus:
+            total_pay += self.bonus
+        elif self.contracts_landed and self.commission_per_contract:
+            commission = self.contracts_landed * self.commission_per_contract
+            total_pay += commission
+
+        return total_pay
+        
 
     def __str__(self):
         pay_description = f"{self.name} works on "
@@ -33,12 +42,9 @@ class Employee:
         total_pay = self.get_pay()
 
         if self.bonus:
-            total_pay += self.bonus
             pay_description += f" and receives a bonus commission of {self.bonus}."
 
         if self.contracts_landed and self.commission_per_contract:
-            commission = self.contracts_landed * self.commission_per_contract
-            total_pay += commission
             pay_description += f" and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract."
 
         pay_description += f" Their total pay is {total_pay}."

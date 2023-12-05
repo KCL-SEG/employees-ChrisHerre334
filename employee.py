@@ -30,23 +30,23 @@ class Employee:
         
 
     def __str__(self):
-        pay_description = f'{self.name} works on '
+        pay_description = '{self.name} works on '
 
         if self.contract_type == 'salary':
-            pay_description += f'a monthly salary of {self.salary}.'
+            pay_description += 'a monthly salary of {self.salary}.'
         elif self.contract_type == 'hourly':
-            pay_description += f'a contract of {self.hours_worked} hours at {self.hourly_wage}/hour.'
+            pay_description += 'a contract of {self.hours_worked} hours at {self.hourly_wage}/hour.'
         else:
             pay_description += 'an unknown contract type.'
 
         total_pay = self.get_pay()
 
         if self.contracts_landed and self.commission_per_contract:
-            pay_description += f' and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract.'
+            pay_description += ' and receives a commission for {self.contracts_landed} contract(s) at {self.commission_per_contract}/contract.'
         elif self.bonus:
-            pay_description += f' and receives a bonus commission of {self.bonus}.'
+            pay_description += ' and receives a bonus commission of {self.bonus}.'
 
-        pay_description += f' Their total pay is {total_pay}.'
+        pay_description += ' Their total pay is {total_pay}.'
 
         return pay_description
 

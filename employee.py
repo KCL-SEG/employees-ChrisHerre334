@@ -30,7 +30,7 @@ class Employee:
         
 
     def __str__(self):
-        pay_description = '{self.name} works on '
+        pay_description = f'{self.name} works on '
 
         if self.contract_type == 'salary':
             pay_description += f'a monthly salary of {self.salary}.'
